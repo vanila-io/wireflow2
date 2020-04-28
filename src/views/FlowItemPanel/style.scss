@@ -1,0 +1,10 @@
+.node-item-card {
+  overflow: hidden;
+  div {
+    padding: 6px 15px;
+    box-shadow: 0 0 3px rgba($color: #000, $alpha: 0.3);
+    img {
+      max-width: 100%;
+    }
+  }
+}

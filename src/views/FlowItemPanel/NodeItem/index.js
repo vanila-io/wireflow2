@@ -1,17 +1,18 @@
 import React from 'react';
 import { Item } from 'gg-editor';
+
 const NodeItem = (props) => {
-  const { type, size, label, src } = props;
+  const { label, img } = props;
   return (
     <Item
+      type='node'
+      size={[96, 88]}
       model={{
-        type: type,
-        size: size,
+        img: img,
         label: label,
       }}
-    >
-      <img src={src} width='55' height='56' draggable={false} alt='' />
-    </Item>
+      src={img}
+    />
   );
 };
 

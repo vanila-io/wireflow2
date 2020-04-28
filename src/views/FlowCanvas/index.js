@@ -1,13 +1,10 @@
 import React from 'react';
 import { Flow } from 'gg-editor';
 
-const data = {
-  nodes: [],
-  edges: [],
-};
+import './style.scss';
 
 const FlowCanvas = () => {
-  return <Flow style={{ width: '100%', height: '100vh' }} data={data} />;
+  return <Flow style={{ height: '100vh', overflow: 'hidden' }} />;
 };
 
 export default FlowCanvas;
