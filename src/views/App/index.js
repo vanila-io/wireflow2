@@ -1,10 +1,14 @@
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import Layout from 'antd/es/layout';
+import 'antd/es/layout/style/css';
+import Row from 'antd/es/row';
+import 'antd/es/row/style/css';
+import Col from 'antd/es/col';
+import 'antd/es/col/style/css';
 import GGEditor from 'gg-editor';
 
 import NodeRegister from '../../register/node';
 import FlowToolbar from '../../components/FlowToolbar';
-
 import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';
 import FlowDetailPanel from '../../components/FlowDetailPanel';
@@ -30,7 +34,7 @@ const App = () => {
           <Col span={2}>
             <FlowItemPanel />
           </Col>
-          <Col span={18} style={{ textAlign: 'center' }}>
+          <Col span={18} className='text-center'>
             <FlowToolbar />
             <FlowCanvas />
           </Col>

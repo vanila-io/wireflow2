@@ -1,6 +1,8 @@
 import React from 'react';
-import { Tooltip } from 'antd';
+import Tooltip from 'antd/es/tooltip';
+import 'antd/es/tooltip/style/css';
 import { Command } from 'gg-editor';
+
 import IconFont from '../../../common/IconFont';
 
 const upperFirst = (str) =>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Toolbar } from 'gg-editor';
-import { Divider } from 'antd';
+import Divider from 'antd/es/divider';
+import 'antd/es/divider/style/css';
 
 import ToolbarButton from './ToolbarButton';
 

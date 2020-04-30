@@ -1,6 +1,13 @@
 import React from 'react';
-import { Card, Input, Select, Form } from 'antd';
 import { withPropsAPI } from 'gg-editor';
+import Card from 'antd/es/card';
+import 'antd/es/card/style/css';
+import Input from 'antd/es/input';
+import 'antd/es/input/style/css';
+import Select from 'antd/es/select';
+import 'antd/es/select/style/css';
+import Form from 'antd/es/form';
+import 'antd/es/form/style/css';
 
 const { Item } = Form;
 const { Option } = Select;
