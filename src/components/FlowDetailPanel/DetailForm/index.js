@@ -9,11 +9,10 @@ import 'antd/es/select/style/css';
 import Form from 'antd/es/form';
 import 'antd/es/form/style/css';
 
+import { upperFirst } from '../../../utils';
+
 const { Item } = Form;
 const { Option } = Select;
-
-const upperFirst = (str) =>
-  str.toLowerCase().replace(/( |^)[a-z]/g, (l) => l.toUpperCase());
 
 const inlineFormItemLayout = {
   labelCol: {
