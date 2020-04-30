@@ -18,24 +18,11 @@ const NodeRegister = () => {
         },
         draggable: true,
       });
-      // group.addShape('dom', {
-      //   attrs: {
-      //     x: 0,
-      //     y: 0,
-      //     width: width,
-      //     height: height,
-      //     html: `
-      //     <span onclick="alert('Hi')" style="background-color: red;height: 20px;  width: 30px;">No No no
-      //     </span>
-      //       `,
-      //   },
-      //   draggable: true,
-      // });
       if (cfg.model.label) {
         group.addShape('text', {
-          // attrs: style
+          // attrs: label style
           attrs: {
-            x: 0, // 居中
+            x: 0,
             y: -(height - 25) / 2,
             textAlign: 'center',
             textBaseline: 'middle',

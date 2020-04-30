@@ -5,9 +5,9 @@ import GGEditor from 'gg-editor';
 import NodeRegister from '../../register/node';
 import FlowToolbar from '../../components/FlowToolbar';
 
-import FlowCanvas from '../FlowCanvas';
-import FlowItemPanel from '../FlowItemPanel';
-import FlowDetailPanel from '../FlowDetailPanel';
+import FlowCanvas from '../../components/FlowCanvas';
+import FlowItemPanel from '../../components/FlowItemPanel';
+import FlowDetailPanel from '../../components/FlowDetailPanel';
 
 import './style.scss';
 
@@ -15,7 +15,6 @@ GGEditor.setTrackable(false);
 
 const App = () => {
   function onBeforeCommandExecute(pp) {
-    console.log('onBeforeCommandExecute -> pp', pp);
     const { command } = pp;
     if (command.name !== 'add') return;
     const { addModel, type } = command;
@@ -23,25 +22,10 @@ const App = () => {
       ? (addModel.shape = 'node-image')
       : (addModel.shape = 'flow-polyline-round');
   }
-  const obj = {
-    hell: 'hlo',
-    tst: {
-      tsd: this,
-    },
-  };
-  console.log('App -> obj', obj);
 
   return (
     <Layout>
-      <GGEditor
-        onBeforeCommandExecute={onBeforeCommandExecute}
-        // onAfterCommandExecute={(command) => {
-        //   console.log('object', command);
-        // }}
-        // editor={(dd) => {
-        //   console.log('dd', dd);
-        // }}
-      >
+      <GGEditor onBeforeCommandExecute={onBeforeCommandExecute}>
         <Row>
           <Col span={2}>
             <FlowItemPanel />

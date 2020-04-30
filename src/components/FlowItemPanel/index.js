@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemPanel, Item } from 'gg-editor';
+import { ItemPanel } from 'gg-editor';
 import { Card } from 'antd';
 
 import NodeItem from './NodeItem';

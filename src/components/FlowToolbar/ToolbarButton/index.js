@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip } from 'antd';
 import { Command } from 'gg-editor';
-import IconFont from '../../common/IconFont';
+import IconFont from '../../../common/IconFont';
 
 const upperFirst = (str) =>
   str.toLowerCase().replace(/( |^)[a-z]/g, (l) => l.toUpperCase());

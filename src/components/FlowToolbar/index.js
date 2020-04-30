@@ -2,7 +2,7 @@ import React from 'react';
 import { Toolbar } from 'gg-editor';
 import { Divider } from 'antd';
 
-import ToolbarButton from '../ToolbarButton';
+import ToolbarButton from './ToolbarButton';
 
 import './style.scss';
 
