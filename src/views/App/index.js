@@ -12,6 +12,7 @@ import FlowToolbar from '../../components/FlowToolbar';
 import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';
 import FlowDetailPanel from '../../components/FlowDetailPanel';
+import FlowMiniMap from '../../components/FlowMiniMap';
 
 GGEditor.setTrackable(false);
 
@@ -38,6 +39,7 @@ const App = () => {
           </Col>
           <Col span={4}>
             <FlowDetailPanel />
+            <FlowMiniMap />
           </Col>
         </Row>
         <NodeRegister />
