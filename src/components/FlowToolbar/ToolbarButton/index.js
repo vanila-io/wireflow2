@@ -5,7 +5,7 @@ import { Command } from 'gg-editor';
 
 import { upperFirst } from '../../../utils';
 
-import IconFont from '../../../common/IconFont';
+import IconFont from '../../IconFont';
 
 const ToolbarButton = (props) => {
   const { command, icon, text } = props;
