@@ -3,9 +3,9 @@ import Tooltip from 'antd/es/tooltip';
 import 'antd/es/tooltip/style/css';
 import { Command } from 'gg-editor';
 
-import { upperFirst } from '../../../utils';
+import { upperFirst } from '../../utils';
 
-import IconFont from '../../IconFont';
+import IconFont from '../IconFont';
 
 const ToolbarButton = (props) => {
   const { command, icon, text } = props;

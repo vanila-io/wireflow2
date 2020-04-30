@@ -3,7 +3,7 @@ import { Toolbar } from 'gg-editor';
 import Divider from 'antd/es/divider';
 import 'antd/es/divider/style/css';
 
-import ToolbarButton from './ToolbarButton';
+import ToolbarButton from '../ToolbarButton';
 
 import './style.css';
 
@@ -17,8 +17,8 @@ const FlowToolbar = () => {
       <ToolbarButton command='paste' />
       <ToolbarButton command='delete' />
       <Divider type='vertical' />
-      <ToolbarButton command='zoomIn' icon='zoom-in' text='Zoom In' />
-      <ToolbarButton command='zoomOut' icon='zoom-out' text='Zoom Out' />
+      <ToolbarButton command='zoomIn' icon='zoomin' text='Zoom In' />
+      <ToolbarButton command='zoomOut' icon='zoomout' text='Zoom Out' />
       <ToolbarButton command='autoZoom' icon='fit-map' text='Fit Map' />
       <ToolbarButton
         command='resetZoom'
@@ -34,7 +34,7 @@ const FlowToolbar = () => {
         icon='multi-select'
         text='Multi Select'
       />
-      <ToolbarButton command='addGroup' icon='group' text='Add Group' />
+      <ToolbarButton command='addGroup' icon='-group' text='Add Group' />
       <ToolbarButton command='unGroup' icon='ungroup' text='Ungroup' />
     </Toolbar>
   );
