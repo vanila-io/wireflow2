@@ -103,7 +103,13 @@ class DetailForm extends React.Component {
     if (!this.item) return;
 
     return (
-      <Card type='inner' size='small' title={upperFirst(type)} bordered={false}>
+      <Card
+        type='inner'
+        size='small'
+        title={upperFirst(type)}
+        className='details__card'
+        bordered={false}
+      >
         {type === 'node' && this.renderNodeDetail()}
         {type === 'edge' && this.renderEdgeDetail()}
         {type === 'group' && this.renderGroupDetail()}

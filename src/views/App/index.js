@@ -13,8 +13,6 @@ import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';
 import FlowDetailPanel from '../../components/FlowDetailPanel';
 
-import './style.scss';
-
 GGEditor.setTrackable(false);
 
 const App = () => {

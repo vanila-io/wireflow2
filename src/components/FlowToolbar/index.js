@@ -5,11 +5,11 @@ import 'antd/es/divider/style/css';
 
 import ToolbarButton from './ToolbarButton';
 
-import './style.scss';
+import './style.css';
 
 const FlowToolbar = () => {
   return (
-    <Toolbar className='control-toolbar'>
+    <Toolbar className='toolbar'>
       <ToolbarButton command='undo' />
       <ToolbarButton command='redo' />
       <Divider type='vertical' />

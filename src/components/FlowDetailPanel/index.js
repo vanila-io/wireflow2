@@ -12,11 +12,11 @@ import {
 
 import DetailForm from './DetailForm';
 
-import './style.scss';
+import './style.css';
 
 const FlowDetailPanel = () => {
   return (
-    <DetailPanel className='details-form'>
+    <DetailPanel className='details'>
       <NodePanel>
         <DetailForm type='node' />
       </NodePanel>
@@ -27,10 +27,22 @@ const FlowDetailPanel = () => {
         <DetailForm type='group' />
       </GroupPanel>
       <MultiPanel>
-        <Card type='inner' size='small' title='Multi Select' bordered={false} />
+        <Card
+          type='inner'
+          size='small'
+          title='Multi Select'
+          className='details__card'
+          bordered={false}
+        />
       </MultiPanel>
       <CanvasPanel>
-        <Card type='inner' size='small' title='Canvas' bordered={false} />
+        <Card
+          type='inner'
+          size='small'
+          title='Canvas'
+          className='details__card'
+          bordered={false}
+        />
       </CanvasPanel>
     </DetailPanel>
   );

@@ -1,0 +1,17 @@
+.sidebar {
+  height: 100vh;
+}
+.sidebar .ant-card-body div {
+  padding: 6px 15px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+  background: #ffffff;
+}
+.sidebar .ant-card-body div:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1) translateX(3px);
+  z-index: 999;
+}
+.sidebar div img {
+  max-width: 100%;
+}

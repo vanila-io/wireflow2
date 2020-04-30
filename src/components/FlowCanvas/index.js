@@ -1,10 +1,10 @@
 import React from 'react';
 import { Flow } from 'gg-editor';
 
-import './style.scss';
+import './style.css';
 
 const FlowCanvas = () => {
-  return <Flow style={{ height: '100vh', overflow: 'hidden' }} />;
+  return <Flow className='flow' />;
 };
 
 export default FlowCanvas;
