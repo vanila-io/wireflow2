@@ -18,13 +18,18 @@ import ExportCanvas from '../../components/ExportCanvas';
 GGEditor.setTrackable(false);
 
 const App = () => {
-  function onBeforeCommandExecute(pp) {
-    const { command } = pp;
+  function onBeforeCommandExecute(ev) {
+    const { command } = ev;
     if (command.name !== 'add') return;
     const { addModel, type } = command;
-    type === 'node'
-      ? (addModel.shape = 'node-image')
-      : (addModel.shape = 'flow-polyline-round');
+    if (type === 'node') {
+      addModel.shape = 'node-image';
+    }
+    if (type === 'edge') {
+      addModel.shape = 'flow-polyline-round';
+      addModel.color = '#a4b2c0';
+      addModel.style = { lineWidth: 2 };
+    }
   }
 
   return (

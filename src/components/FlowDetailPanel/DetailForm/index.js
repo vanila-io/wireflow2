@@ -8,6 +8,10 @@ import Select from 'antd/es/select';
 import 'antd/es/select/style/css';
 import Form from 'antd/es/form';
 import 'antd/es/form/style/css';
+import Slider from 'antd/es/slider';
+import 'antd/es/slider/style/css';
+import ColorPicker from 'rc-color-picker';
+import 'rc-color-picker/assets/index.css';
 
 import { upperFirst } from '../../../utils';
 
@@ -16,10 +20,10 @@ const { Option } = Select;
 
 const inlineFormItemLayout = {
   labelCol: {
-    sm: { span: 8 },
+    sm: { span: 6 },
   },
   wrapperCol: {
-    sm: { span: 16 },
+    sm: { span: 18 },
   },
 };
 
@@ -66,8 +70,12 @@ class DetailForm extends React.Component {
   };
 
   renderEdgeDetail = () => {
-    const { label = '', shape = 'flow-polyline-round' } = this.item.getModel();
-
+    const {
+      label = '',
+      shape = 'flow-polyline-round',
+      color,
+      style: { lineWidth },
+    } = this.item.getModel();
     return (
       <Form initialValues={{ label, shape }}>
         <Item label='Label' name='label' {...inlineFormItemLayout}>
@@ -81,6 +89,23 @@ class DetailForm extends React.Component {
             <Option value='flow-polyline'>Polyline</Option>
             <Option value='flow-polyline-round'>Polyline Round</Option>
           </Select>
+        </Item>
+        <Item label='Size' name='size' {...inlineFormItemLayout}>
+          <Slider
+            min={1}
+            max={10}
+            defaultValue={lineWidth}
+            onChange={(lineWidth) =>
+              this.handleFieldChange({ style: { lineWidth } })
+            }
+          />
+        </Item>
+        <Item label='Color' name='color' {...inlineFormItemLayout}>
+          <ColorPicker
+            animation='slide-up'
+            color={color}
+            onChange={({ color }) => this.handleFieldChange({ color })}
+          />
         </Item>
       </Form>
     );

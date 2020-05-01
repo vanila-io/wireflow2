@@ -6,6 +6,7 @@
     "@ant-design/icons": "^4.0.6",
     "antd": "^4.1.4",
     "gg-editor": "^2.0.3",
+    "rc-color-picker": "^1.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"

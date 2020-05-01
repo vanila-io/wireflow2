@@ -3,7 +3,7 @@ import { Toolbar } from 'gg-editor';
 import Divider from 'antd/es/divider';
 import 'antd/es/divider/style/css';
 
-import ToolbarButton from '../ToolbarButton';
+import ToolbarButton from './ToolbarButton';
 
 import './style.css';
 
