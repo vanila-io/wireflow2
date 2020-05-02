@@ -11,7 +11,6 @@ import {
 } from 'gg-editor';
 
 import DetailForm from './DetailForm';
-
 import './style.css';
 
 const FlowDetailPanel = () => {

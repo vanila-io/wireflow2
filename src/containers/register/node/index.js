@@ -9,6 +9,7 @@ const NodeRegister = () => {
       const width = size[0];
       const height = size[1];
       group.addShape('image', {
+        // attrs: node image style
         attrs: {
           x: -width / 2,
           y: -height / 2,

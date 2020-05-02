@@ -1,22 +1,22 @@
 import React from 'react';
 import { withPropsAPI } from 'gg-editor';
 import Card from 'antd/es/card';
-import 'antd/es/card/style/css';
 import Input from 'antd/es/input';
-import 'antd/es/input/style/css';
 import Select from 'antd/es/select';
-import 'antd/es/select/style/css';
 import Form from 'antd/es/form';
-import 'antd/es/form/style/css';
-import Slider from 'antd/es/slider';
-import 'antd/es/slider/style/css';
 import ColorPicker from 'rc-color-picker';
+import Slider from 'antd/es/slider';
+
+import 'antd/es/card/style/css';
+import 'antd/es/input/style/css';
+import 'antd/es/select/style/css';
+import 'antd/es/form/style/css';
+import 'antd/es/slider/style/css';
 import 'rc-color-picker/assets/index.css';
 
 import { upperFirst } from '../../../utils';
 
 const { Item } = Form;
-const { Option } = Select;
 
 const inlineFormItemLayout = {
   labelCol: {
@@ -34,24 +34,19 @@ class DetailForm extends React.Component {
   }
 
   handleFieldChange = (values) => {
-    const { propsAPI } = this.props;
-    const { getSelected, executeCommand, update } = propsAPI;
+    const {
+      propsAPI: { getSelected, executeCommand, update },
+    } = this.props;
 
-    setTimeout(() => {
-      const item = getSelected()[0];
-      if (!item) {
-        return;
-      }
-      executeCommand(() => {
-        update(item, {
-          ...values,
-        });
-      });
-    }, 0);
+    const item = getSelected()[0];
+    if (!item) return;
+
+    executeCommand(() => update(item, { ...values }));
   };
 
   handleInputBlur = (type) => (e) => {
     e.preventDefault();
+
     this.handleFieldChange({
       [type]: e.currentTarget.value,
     });
@@ -76,20 +71,25 @@ class DetailForm extends React.Component {
       color,
       style: { lineWidth },
     } = this.item.getModel();
+
     return (
       <Form initialValues={{ label, shape }}>
         <Item label='Label' name='label' {...inlineFormItemLayout}>
           <Input onBlur={this.handleInputBlur('label')} />
         </Item>
+
         <Item label='Shape' name='shape' {...inlineFormItemLayout}>
           <Select
             onChange={(value) => this.handleFieldChange({ shape: value })}
           >
-            <Option value='flow-smooth'>Smooth</Option>
-            <Option value='flow-polyline'>Polyline</Option>
-            <Option value='flow-polyline-round'>Polyline Round</Option>
+            <Select.Option value='flow-smooth'>Smooth</Select.Option>
+            <Select.Option value='flow-polyline'>Polyline</Select.Option>
+            <Select.Option value='flow-polyline-round'>
+              Polyline Round
+            </Select.Option>
           </Select>
         </Item>
+
         <Item label='Size' name='size' {...inlineFormItemLayout}>
           <Slider
             min={1}
@@ -100,6 +100,7 @@ class DetailForm extends React.Component {
             }
           />
         </Item>
+
         <Item label='Color' name='color' {...inlineFormItemLayout}>
           <ColorPicker
             animation='slide-up'

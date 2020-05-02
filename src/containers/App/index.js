@@ -1,13 +1,14 @@
 import React from 'react';
 import Layout from 'antd/es/layout';
-import 'antd/es/layout/style/css';
 import Row from 'antd/es/row';
-import 'antd/es/row/style/css';
 import Col from 'antd/es/col';
-import 'antd/es/col/style/css';
 import GGEditor from 'gg-editor';
 
-import NodeRegister from '../../register/node';
+import 'antd/es/layout/style/css';
+import 'antd/es/row/style/css';
+import 'antd/es/col/style/css';
+
+import NodeRegister from '../register/node';
 import FlowToolbar from '../../components/FlowToolbar';
 import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';

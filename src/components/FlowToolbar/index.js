@@ -4,7 +4,6 @@ import Divider from 'antd/es/divider';
 import 'antd/es/divider/style/css';
 
 import ToolbarButton from './ToolbarButton';
-
 import './style.css';
 
 const FlowToolbar = () => {

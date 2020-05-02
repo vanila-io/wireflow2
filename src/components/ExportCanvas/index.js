@@ -3,7 +3,6 @@ import Button from 'antd/es/button';
 import 'antd/es/button/style/css';
 
 import IconFont from '../IconFont';
-
 import './style.css';
 
 const ExportCanvas = () => {

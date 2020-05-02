@@ -5,7 +5,6 @@ import 'antd/es/card/style/css';
 
 import NodeItem from './NodeItem';
 import nodes from './nodesData';
-
 import './style.css';
 
 const FlowItemPanel = () => {
