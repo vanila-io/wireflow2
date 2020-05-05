@@ -3,7 +3,7 @@ import { Flow } from 'gg-editor';
 import './style.css';
 
 const FlowCanvas = () => {
-  return <Flow className='flow' />;
+  return <Flow style={{ background: '#ddd' }} className='flow' />;
 };
 
 export default FlowCanvas;

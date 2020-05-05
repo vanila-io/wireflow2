@@ -23,13 +23,14 @@ const NodeRegister = () => {
         group.addShape('text', {
           // attrs: label style
           attrs: {
-            x: 0,
-            y: -(height - 25) / 2,
-            textAlign: 'center',
+            x: -(width - 10) / 2,
+            y: -(height - 23) / 2,
+            // textAlign: 'center',
+            fontWeight: 600,
             textBaseline: 'middle',
             text: cfg.model.label,
-            fill: '#333',
-            fontSize: 11,
+            fill: '#94A4A5',
+            fontSize: 10,
           },
         });
       }

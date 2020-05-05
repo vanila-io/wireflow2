@@ -9,7 +9,8 @@ const ExportCanvas = () => {
   function saveCanvas() {
     const canvasSave = document.getElementById('canvas_1');
     const imgSrc = canvasSave.toDataURL('image/*');
-    var element = document.createElement('a');
+    const element = document.createElement('a');
+
     element.href = imgSrc;
     element.setAttribute('download', 'image.png');
     element.click();

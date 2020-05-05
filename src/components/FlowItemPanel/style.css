@@ -1,17 +1,36 @@
 .sidebar {
   height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  z-index: 999;
+  box-shadow: 0px 0px 10px 0px rgba(77, 77, 77, 0.2);
+}
+.sidebar .ant-card-body {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  bottom: 0;
+  overflow: scroll;
+  width: 112px;
+  height: 100vh;
+  z-index: 1000;
+  text-align: center;
+  background: #fff;
 }
 .sidebar .ant-card-body div {
   padding: 6px 15px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   transition: all 0.1s ease;
   background: #ffffff;
 }
 .sidebar .ant-card-body div:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.1) translateX(3px);
   z-index: 999;
 }
 .sidebar div img {
   max-width: 100%;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
