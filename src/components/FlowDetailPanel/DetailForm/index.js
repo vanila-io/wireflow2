@@ -72,6 +72,13 @@ class DetailForm extends React.Component {
       style: { lineWidth },
     } = this.item.getModel();
 
+    const {
+      propsAPI: { getSelected },
+    } = this.props;
+    const item = getSelected()[0];
+    if (!item) return;
+    item.isSelected = false;
+
     return (
       <Form initialValues={{ label, shape }}>
         <Item label='Label' name='label' {...inlineFormItemLayout}>
