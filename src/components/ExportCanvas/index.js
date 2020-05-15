@@ -1,19 +1,21 @@
 import React from 'react';
 import Button from 'antd/es/button';
 import 'antd/es/button/style/css';
+import htmlToImage from 'html-to-image';
 
 import IconFont from '../IconFont';
 import './style.css';
 
 const ExportCanvas = () => {
   function saveCanvas() {
-    const canvasSave = document.getElementById('canvas_1');
-    const imgSrc = canvasSave.toDataURL('image/*');
-    const element = document.createElement('a');
-
-    element.href = imgSrc;
-    element.setAttribute('download', 'image.png');
-    element.click();
+    htmlToImage
+      .toJpeg(document.getElementById('J_FlowContainer_2'), { quality: 1 })
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'wireflow.jpg';
+        link.href = dataUrl;
+        link.click();
+      });
   }
 
   return (
