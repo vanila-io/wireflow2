@@ -36,16 +36,14 @@ const App = () => {
   return (
     <Layout>
       <GGEditor onBeforeCommandExecute={onBeforeCommandExecute}>
-        <Row>
-          <Col span={2}>
-            <FlowItemPanel />
-          </Col>
-          <Col span={18} className='text-center'>
+        <FlowItemPanel />
+        <Row style={{ marginLeft: 112 }}>
+          <Col span={19} className='text-center'>
             <ExportCanvas />
             <FlowToolbar />
             <FlowCanvas />
           </Col>
-          <Col span={4}>
+          <Col span={5}>
             <FlowDetailPanel />
             <FlowMiniMap />
           </Col>
