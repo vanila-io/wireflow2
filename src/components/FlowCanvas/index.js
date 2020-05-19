@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flow } from 'gg-editor';
 import './style.css';
 
 const FlowCanvas = () => {
+  const [edge, setEdge] = useState({});
+  const [oncanvas, setOnCanvas] = useState(false);
+
+  const mouseEvent = async (e) => {
+    const event = await e;
+    const EVENT_TYPE = e._type;
+
+    if (!event?.item) {
+      switch (EVENT_TYPE) {
+        case 'mouseleave':
+          setOnCanvas(true);
+          break;
+        case 'mouseenter':
+          setOnCanvas(false);
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (edge.type === 'edge') {
+      oncanvas ? (edge.isSelected = false) : (edge.isSelected = true);
+    }
+  }, [oncanvas, edge]);
+
+  // document.addEventListener('keydown', (e) => {
+  //   console.log(e);
+  // },true);
+
   return (
     <Flow
-      // onAfterItemSelected={async (e) => {
-      //   const item = await e.item;
-      //   item.isSelected = false;
-      //   console.log('af', item.id);
-      //   console.log('af', item.isSelected);
-      // }}
-      onMouseEnter={(e) => {
-        console.log(e._type);
-      }}
-      onBeforeItemUnselected={async (e) => {
+      onAfterItemSelected={async (e) => {
         const item = await e.item;
-        item.isSelected = true;
-        console.log('before', item.id);
-        console.log('before', item.isSelected);
+
+        setEdge(item);
       }}
-      style={{ background: '#ddd' }}
+      onBeforeItemUnselected={() => setEdge({})}
+      onMouseEnter={mouseEvent}
+      onMouseLeave={mouseEvent}
       className='flow'
     />
   );
