@@ -55,6 +55,28 @@ class DetailForm extends React.Component {
   renderNodeDetail = () => {
     const { label } = this.item.getModel();
 
+    document.addEventListener(
+      'keydown',
+      (e) => {
+        const { ctrlKey, key } = e;
+
+        if (ctrlKey && key === 'h') {
+          this.handleFieldChange({
+            shape: 'node-image-without-header',
+            size: [96, 78],
+          });
+        }
+
+        if (ctrlKey && key === 'k') {
+          this.handleFieldChange({
+            shape: 'node-image-header',
+            size: [96, 88],
+          });
+        }
+      },
+      true
+    );
+
     return (
       <Form initialValues={{ label }}>
         <Item label='Label' name='label' {...inlineFormItemLayout}>

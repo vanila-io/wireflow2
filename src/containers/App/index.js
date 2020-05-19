@@ -8,7 +8,10 @@ import 'antd/es/layout/style/css';
 import 'antd/es/row/style/css';
 import 'antd/es/col/style/css';
 
-import NodeRegister from '../register/node';
+import {
+  NodeRegisteWithHeader,
+  NodeRegisteWithoutHeader,
+} from '../register/node';
 import FlowToolbar from '../../components/FlowToolbar';
 import FlowCanvas from '../../components/FlowCanvas';
 import FlowItemPanel from '../../components/FlowItemPanel';
@@ -24,7 +27,7 @@ const App = () => {
     if (command.name !== 'add') return;
     const { addModel, type } = command;
     if (type === 'node') {
-      addModel.shape = 'node-image';
+      addModel.shape = 'node-image-header';
     }
     if (type === 'edge') {
       addModel.shape = 'flow-polyline-round';
@@ -48,7 +51,8 @@ const App = () => {
             <FlowMiniMap />
           </Col>
         </Row>
-        <NodeRegister />
+        <NodeRegisteWithHeader />
+        <NodeRegisteWithoutHeader />
       </GGEditor>
     </Layout>
   );

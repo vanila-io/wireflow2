@@ -30,10 +30,6 @@ const FlowCanvas = () => {
     }
   }, [oncanvas, edge]);
 
-  // document.addEventListener('keydown', (e) => {
-  //   console.log(e);
-  // },true);
-
   return (
     <Flow
       onAfterItemSelected={async (e) => {
