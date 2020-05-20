@@ -11,6 +11,11 @@ import blogImage4 from '../../assets/images/Blog/Articles 4.svg';
 import blogImage5 from '../../assets/images/Blog/Articles 5.svg';
 import blogImage6 from '../../assets/images/Blog/Articles 6.svg';
 import blogImage7 from '../../assets/images/Blog/Articles 7.svg';
+import blogImage8 from '../../assets/images/Blog/Articles 8.svg';
+import blogImage9 from '../../assets/images/Blog/Articles 9.svg';
+import blogImage10 from '../../assets/images/Blog/Articles 10.svg';
+import blogImage11 from '../../assets/images/Blog/Articles 11.svg';
+import blogImage12 from '../../assets/images/Blog/Articles 12.svg';
 import cartPopup from '../../assets/images/E-Commerce/Cart Popup.svg';
 import cart from '../../assets/images/E-Commerce/Cart.svg';
 import checkout from '../../assets/images/E-Commerce/Checkout.svg';
@@ -148,6 +153,26 @@ export default [
   {
     label: '',
     img: blogImage7,
+  },
+  {
+    label: '',
+    img: blogImage8,
+  },
+  {
+    label: '',
+    img: blogImage9,
+  },
+  {
+    label: '',
+    img: blogImage10,
+  },
+  {
+    label: '',
+    img: blogImage11,
+  },
+  {
+    label: '',
+    img: blogImage12,
   },
   {
     label: 'Cart pop up',
