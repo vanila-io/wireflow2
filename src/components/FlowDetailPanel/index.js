@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from 'antd/es/card';
 import 'antd/es/card/style/css';
+import Descriptions from 'antd/es/descriptions';
+import 'antd/es/descriptions/style/css';
 import {
   CanvasPanel,
   DetailPanel,
@@ -42,15 +44,19 @@ const FlowDetailPanel = () => {
           className='details__card'
           bordered={false}
         >
-          <h4>Keyboard Shortcut</h4>
-          <ul>
-            <li>
-              <span>Zoom in</span> <code>Ctrl -</code>
-            </li>
-            <li>
-              <span>Zoom out</span> <code>Ctrl =</code>
-            </li>
-          </ul>
+          <Descriptions
+            column={1}
+            layout='horizontal'
+            bordered
+            title='Keyboard Shortcuts'
+          >
+            <Descriptions.Item label='Zoom in'>
+              <code>Ctrl</code> + <code> =</code>
+            </Descriptions.Item>
+            <Descriptions.Item label='Zoom out'>
+              <code>Ctrl</code> + <code>-</code>
+            </Descriptions.Item>
+          </Descriptions>
         </Card>
       </CanvasPanel>
     </DetailPanel>

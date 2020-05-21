@@ -6,6 +6,7 @@ import Select from 'antd/es/select';
 import Form from 'antd/es/form';
 import ColorPicker from 'rc-color-picker';
 import Slider from 'antd/es/slider';
+import Descriptions from 'antd/es/descriptions';
 
 import 'antd/es/card/style/css';
 import 'antd/es/input/style/css';
@@ -13,6 +14,7 @@ import 'antd/es/select/style/css';
 import 'antd/es/form/style/css';
 import 'antd/es/slider/style/css';
 import 'rc-color-picker/assets/index.css';
+import 'antd/es/descriptions/style/css';
 
 import { upperFirst } from '../../../utils';
 
@@ -84,18 +86,22 @@ class DetailForm extends React.Component {
             <Input onBlur={this.handleInputBlur('label')} />
           </Item>
         </Form>
-        <h4>Keyboard Shortcut</h4>
-        <ul>
-          <li>
-            <span>Hide Header</span> <code>Ctrl h</code>
-          </li>
-          <li>
-            <span>Show Header</span> <code>Ctrl k</code>
-          </li>
-          <li>
-            <span>Delete Node</span> <code>Delete</code>
-          </li>
-        </ul>
+        <Descriptions
+          column={1}
+          layout='horizontal'
+          bordered
+          title='Keyboard Shortcuts'
+        >
+          <Descriptions.Item label='Hide Header'>
+            <code>Ctrl</code> + <code>h</code>
+          </Descriptions.Item>
+          <Descriptions.Item label='Show Header'>
+            <code>Ctrl</code> + <code>k</code>
+          </Descriptions.Item>
+          <Descriptions.Item label='Delete Node'>
+            <code>delete</code> / <code>backspace</code>
+          </Descriptions.Item>
+        </Descriptions>
       </>
     );
   };
@@ -146,12 +152,16 @@ class DetailForm extends React.Component {
             />
           </Item>
         </Form>
-        <h4>Keyboard Shortcut</h4>
-        <ul>
-          <li>
-            <span>Delete Edge</span> <code>Delete</code>
-          </li>
-        </ul>
+        <Descriptions
+          column={1}
+          layout='horizontal'
+          bordered
+          title='Keyboard Shortcuts'
+        >
+          <Descriptions.Item label='Delete Edge'>
+            <code>delete</code> / <code>backspace</code>
+          </Descriptions.Item>
+        </Descriptions>
       </>
     );
   };
