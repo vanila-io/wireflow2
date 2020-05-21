@@ -78,11 +78,25 @@ class DetailForm extends React.Component {
     );
 
     return (
-      <Form initialValues={{ label }}>
-        <Item label='Label' name='label' {...inlineFormItemLayout}>
-          <Input onBlur={this.handleInputBlur('label')} />
-        </Item>
-      </Form>
+      <>
+        <Form initialValues={{ label }}>
+          <Item label='Label' name='label' {...inlineFormItemLayout}>
+            <Input onBlur={this.handleInputBlur('label')} />
+          </Item>
+        </Form>
+        <h4>Keyboard Shortcut</h4>
+        <ul>
+          <li>
+            <span>Hide Header</span> <code>Ctrl h</code>
+          </li>
+          <li>
+            <span>Show Header</span> <code>Ctrl k</code>
+          </li>
+          <li>
+            <span>Delete Node</span> <code>Delete</code>
+          </li>
+        </ul>
+      </>
     );
   };
 
@@ -95,42 +109,50 @@ class DetailForm extends React.Component {
     } = this.item.getModel();
 
     return (
-      <Form initialValues={{ label, shape }}>
-        <Item label='Label' name='label' {...inlineFormItemLayout}>
-          <Input onBlur={this.handleInputBlur('label')} />
-        </Item>
+      <>
+        <Form initialValues={{ label, shape }}>
+          <Item label='Label' name='label' {...inlineFormItemLayout}>
+            <Input onBlur={this.handleInputBlur('label')} />
+          </Item>
 
-        <Item label='Shape' name='shape' {...inlineFormItemLayout}>
-          <Select
-            onChange={(value) => this.handleFieldChange({ shape: value })}
-          >
-            <Select.Option value='flow-smooth'>Smooth</Select.Option>
-            <Select.Option value='flow-polyline'>Polyline</Select.Option>
-            <Select.Option value='flow-polyline-round'>
-              Polyline Round
-            </Select.Option>
-          </Select>
-        </Item>
+          <Item label='Shape' name='shape' {...inlineFormItemLayout}>
+            <Select
+              onChange={(value) => this.handleFieldChange({ shape: value })}
+            >
+              <Select.Option value='flow-smooth'>Smooth</Select.Option>
+              <Select.Option value='flow-polyline'>Polyline</Select.Option>
+              <Select.Option value='flow-polyline-round'>
+                Polyline Round
+              </Select.Option>
+            </Select>
+          </Item>
 
-        <Item label='Size' name='size' {...inlineFormItemLayout}>
-          <Slider
-            min={1}
-            max={10}
-            defaultValue={lineWidth}
-            onChange={(lineWidth) =>
-              this.handleFieldChange({ style: { lineWidth } })
-            }
-          />
-        </Item>
+          <Item label='Size' name='size' {...inlineFormItemLayout}>
+            <Slider
+              min={1}
+              max={10}
+              defaultValue={lineWidth}
+              onChange={(lineWidth) =>
+                this.handleFieldChange({ style: { lineWidth } })
+              }
+            />
+          </Item>
 
-        <Item label='Color' name='color' {...inlineFormItemLayout}>
-          <ColorPicker
-            animation='slide-up'
-            color={color}
-            onChange={({ color }) => this.handleFieldChange({ color })}
-          />
-        </Item>
-      </Form>
+          <Item label='Color' name='color' {...inlineFormItemLayout}>
+            <ColorPicker
+              animation='slide-up'
+              color={color}
+              onChange={({ color }) => this.handleFieldChange({ color })}
+            />
+          </Item>
+        </Form>
+        <h4>Keyboard Shortcut</h4>
+        <ul>
+          <li>
+            <span>Delete Edge</span> <code>Delete</code>
+          </li>
+        </ul>
+      </>
     );
   };
 

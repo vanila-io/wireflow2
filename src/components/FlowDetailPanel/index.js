@@ -41,7 +41,17 @@ const FlowDetailPanel = () => {
           title='Canvas'
           className='details__card'
           bordered={false}
-        />
+        >
+          <h4>Keyboard Shortcut</h4>
+          <ul>
+            <li>
+              <span>Zoom in</span> <code>Ctrl -</code>
+            </li>
+            <li>
+              <span>Zoom out</span> <code>Ctrl =</code>
+            </li>
+          </ul>
+        </Card>
       </CanvasPanel>
     </DetailPanel>
   );
