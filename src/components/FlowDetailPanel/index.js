@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from 'antd/es/card';
 import 'antd/es/card/style/css';
+import Descriptions from 'antd/es/descriptions';
+import 'antd/es/descriptions/style/css';
 import {
   CanvasPanel,
   DetailPanel,
@@ -11,7 +13,6 @@ import {
 } from 'gg-editor';
 
 import DetailForm from './DetailForm';
-
 import './style.css';
 
 const FlowDetailPanel = () => {
@@ -42,7 +43,21 @@ const FlowDetailPanel = () => {
           title='Canvas'
           className='details__card'
           bordered={false}
-        />
+        >
+          <Descriptions
+            column={1}
+            layout='horizontal'
+            bordered
+            title='Keyboard Shortcuts'
+          >
+            <Descriptions.Item label='Zoom in'>
+              <code>Ctrl</code> + <code> =</code>
+            </Descriptions.Item>
+            <Descriptions.Item label='Zoom out'>
+              <code>Ctrl</code> + <code>-</code>
+            </Descriptions.Item>
+          </Descriptions>
+        </Card>
       </CanvasPanel>
     </DetailPanel>
   );

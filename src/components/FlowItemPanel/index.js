@@ -5,12 +5,11 @@ import 'antd/es/card/style/css';
 
 import NodeItem from './NodeItem';
 import nodes from './nodesData';
-
 import './style.css';
 
 const FlowItemPanel = () => {
   return (
-    <ItemPanel>
+    <ItemPanel className='sidebar-wrapper'>
       <Card className='sidebar' bodyStyle={{ padding: 0 }}>
         {nodes && nodes.map((item, i) => <NodeItem key={i} {...item} />)}
       </Card>
