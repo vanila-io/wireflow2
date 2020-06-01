@@ -13,3 +13,10 @@
 #J_ContextMenuContainer_2 .menu {
   display: block !important;
 }
+
+#J_ContextMenuContainer_1 {
+  display: block !important;
+}
+#J_ContextMenuContainer_1 .menu {
+  display: block !important;
+}
