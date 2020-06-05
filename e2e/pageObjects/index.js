@@ -1,6 +1,6 @@
 const mouse = page.mouse;
 
-export const clientYPosition = async (selector) =>
+export const clientXY = async (selector) =>
   await page.$eval(selector, (e) => [e.offsetLeft, e.offsetTop]);
 
 export const moveDown = async (x, y) => {
