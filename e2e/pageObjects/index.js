@@ -1,19 +1,14 @@
-const rootSelector = '#root';
-// var sel = document.getElementsByClassName('sidebar');
+const mouse = page.mouse;
 
-// const x = sel.offsetLeft;
+export const clientYPosition = async (selector) =>
+  await page.$eval(selector, (e) => [e.offsetLeft, e.offsetTop]);
 
-export const root = async () => await page.$(rootSelector);
-
-export const load = async () => {
-  await page.goto(URL, {
-    waitUntil: 'networkidle0',
-    timeout: 15000,
-  });
+export const moveDown = async (x, y) => {
+  await mouse.move(x, y);
+  await mouse.down();
 };
 
-export const getTitle = async () => await page.title();
-
-export const getViewport = async () => await page.viewport();
-
-export const sidebarSelect = async () => await page.$('div.details');
+export const moveUp = async (x, y) => {
+  await mouse.move(x, y);
+  await mouse.up();
+};

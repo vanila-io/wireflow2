@@ -1,10 +1,7 @@
-// import {
-//   load,
-//   getTitle,
-//   // getViewport,
-//   // sidebarSelect,
-//   // root,
-// } from '../pageObjects/index';
+import { clientYPosition, moveDown, moveUp } from '../pageObjects';
+
+const NODE_SELECT_ONE = 'div.sidebar div:nth-child(1)';
+const NODE_SELECT_TWO = 'div.sidebar div:nth-child(2)';
 
 describe('Wireflow', () => {
   beforeAll(async () => {
@@ -15,17 +12,10 @@ describe('Wireflow', () => {
   const navigationPromise = page.waitForNavigation();
 
   it('should be add node (1) on canvas', async (done) => {
-    const clientY = await page.$eval(
-      'div.sidebar div:nth-child(1)',
-      (e) => e.offsetTop
-    );
+    const [, clientY] = await clientYPosition(NODE_SELECT_ONE);
 
-    await navigationPromise;
-
-    await page.mouse.move(70, clientY + 30);
-    await page.mouse.down();
-    await page.mouse.move(200, 200);
-    await page.mouse.up();
+    await moveDown(70, clientY + 30);
+    await moveUp(200, 200);
 
     await navigationPromise;
 
@@ -33,16 +23,10 @@ describe('Wireflow', () => {
   });
 
   it('should be add node (2) on canvas', async (done) => {
-    const clientY = await page.$eval(
-      'div.sidebar div:nth-child(2)',
-      (e) => e.offsetTop
-    );
-    await navigationPromise;
+    const [, clientY] = await clientYPosition(NODE_SELECT_TWO);
 
-    await page.mouse.move(70, clientY + 30);
-    await page.mouse.down();
-    await page.mouse.move(400, 400);
-    await page.mouse.up();
+    await moveDown(70, clientY + 30);
+    await moveUp(400, 400);
 
     await navigationPromise;
 
@@ -50,17 +34,14 @@ describe('Wireflow', () => {
   });
 
   it('should be add edge between two nodes', async (done) => {
-    await page.mouse.move(210, 210);
-    await page.mouse.down();
+    await moveDown(210, 210);
     await page.mouse.up();
 
     await navigationPromise;
 
-    await page.mouse.move(200, 250);
-    await page.mouse.down();
+    await moveDown(200, 250);
     await page.mouse.move(300, 200);
-    await page.mouse.move(400, 450);
-    await page.mouse.up();
+    await moveUp(400, 450);
 
     await page.waitFor(2000);
 
