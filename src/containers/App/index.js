@@ -19,7 +19,7 @@ import FlowDetailPanel from '../../components/FlowDetailPanel';
 import FlowMiniMap from '../../components/FlowMiniMap';
 import ExportCanvas from '../../components/ExportCanvas';
 
-// GGEditor.setTrackable(false);
+GGEditor.setTrackable(false);
 
 const App = () => {
   function onBeforeCommandExecute(ev) {

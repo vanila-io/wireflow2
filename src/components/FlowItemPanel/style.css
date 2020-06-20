@@ -26,6 +26,31 @@
   padding: 4px 16px;
   transition: all 0.1s ease;
   background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+/* .sidebar .ant-card-body div:after {
+  content: '';
+  position: relative;
+  z-index: 9999;
+} */
+.sidebar .ant-card-body div:after {
+  content: '';
+  position: absolute;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.sidebar .ant-card-body div:hover:after {
+  content: '';
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .sidebar .ant-card-body div:hover {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
@@ -35,6 +60,8 @@
 .sidebar div img {
   max-width: 100%;
   margin-top: -10px;
+  position: relative;
+  z-index: 9999;
 }
 ::-webkit-scrollbar {
   width: 0px;
