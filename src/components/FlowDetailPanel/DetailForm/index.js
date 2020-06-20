@@ -83,7 +83,7 @@ class DetailForm extends React.Component {
       <>
         <Form initialValues={{ label }}>
           <Item label='Label' name='label' {...inlineFormItemLayout}>
-            <Input onBlur={this.handleInputBlur('label')} />
+            <Input name='title' onBlur={this.handleInputBlur('label')} />
           </Item>
         </Form>
         <Descriptions

@@ -19,16 +19,20 @@ import FlowDetailPanel from '../../components/FlowDetailPanel';
 import FlowMiniMap from '../../components/FlowMiniMap';
 import ExportCanvas from '../../components/ExportCanvas';
 
-// GGEditor.setTrackable(false);
+GGEditor.setTrackable(false);
 
 const App = () => {
   function onBeforeCommandExecute(ev) {
     const { command } = ev;
+
     if (command.name !== 'add') return;
+
     const { addModel, type } = command;
+
     if (type === 'node') {
       addModel.shape = 'node-image-header';
     }
+
     if (type === 'edge') {
       addModel.shape = 'flow-polyline-round';
       addModel.color = '#a4b2c0';

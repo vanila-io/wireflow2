@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'antd/es/button';
 import 'antd/es/button/style/css';
 import htmlToImage from 'html-to-image';
+import { ContextMenu, Command, CanvasMenu } from 'gg-editor';
 
 import IconFont from '../IconFont';
 import './style.css';
@@ -19,15 +20,21 @@ const ExportCanvas = () => {
   }
 
   return (
-    <div className='export'>
-      <Button
-        onClick={saveCanvas}
-        type='dashed'
-        size='large'
-        shape='circle'
-        icon={<IconFont type='icon-upload-demo' />}
-      />
-    </div>
+    <ContextMenu>
+      <CanvasMenu>
+        <Command name='autoZoom'>
+          <div className='export'>
+            <Button
+              onClick={saveCanvas}
+              type='dashed'
+              size='large'
+              shape='circle'
+              icon={<IconFont type='icon-upload-demo' />}
+            />
+          </div>
+        </Command>
+      </CanvasMenu>
+    </ContextMenu>
   );
 };
 

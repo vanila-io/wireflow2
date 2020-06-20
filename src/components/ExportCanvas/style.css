@@ -7,3 +7,16 @@
 #canvas_1 {
   background: #f0f2f5;
 }
+#J_ContextMenuContainer_2 {
+  display: block !important;
+}
+#J_ContextMenuContainer_2 .menu {
+  display: block !important;
+}
+
+#J_ContextMenuContainer_1 {
+  display: block !important;
+}
+#J_ContextMenuContainer_1 .menu {
+  display: block !important;
+}
